@@ -1,0 +1,384 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #c0c0c044;
+    overflow-x: hidden;
+}
+.container {
+    text-align: center;
+    max-width: 330px;
+    margin: auto;
+}
+.container h1 {
+    text-transform: capitalize;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: orange;
+}
+.container p {
+    opacity: 0.6;
+    margin-top: -10px;
+    margin-bottom: 35px;
+}
+.ser_opt_add {
+    max-width: 100%;
+    background-color: white;
+    margin:  auto;
+    padding: 10px;
+    display: flex;
+    box-shadow: 0 0 13px rgba(0, 0, 0, 0.329);
+    border-radius: 8px;
+}
+.serch_btnsre {
+    width: 60%;
+    position: relative;
+}
+#search-input {
+    position: absolute;
+    left: 5px;
+    width: 100%;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 5px 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid rgba(0, 0, 0, 0.329);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.222);
+    border-radius: 5px;
+    outline: none;
+}
+#search_btn {
+    position: absolute;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    font-size: 16px;
+    right: 0;
+    cursor: pointer;
+    opacity: 0.4;
+}
+#display_options {
+    margin-left: 40px;
+    margin-right: 10px;
+    width: 70px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: black;
+    color: orange;
+    font-weight: 700;
+    text-transform: capitalize;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.322);
+}
+option {
+    color: orange;
+    font-weight: 700;
+    text-transform: capitalize;
+    width: 25px;
+}
+#add_note_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orangered;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    width: 60px;
+    font-weight: 700;
+    color: white;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.322);
+    transition: all .25s ease;
+}
+#add_note_btn:hover {
+    background-color: black;
+    color: orange;
+    transform: scale(0.97);
+}
+#add_note_btn:active {
+    transform: scale(1.1);
+}
+.bold {
+    color: white;
+}
+#notes__task {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+#notes__task li {
+    list-style: none;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.222);
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: relative;
+}
+.title__dltbtn {
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+}
+.title {
+    text-transform: capitalize;
+}
+#dlt_btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+#note_text{
+    text-align: left;
+    text-transform: capitalize;
+    padding-block: 10px;
+    position: relative;
+    width: 100%;
+    transition: all 0.4s ease;
+}
+.note_text {
+    max-height: 10px;
+    overflow: hidden;
+}
+#show_more_less {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 30px;
+    text-decoration: none;
+    color: orange;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+#show_more_less:active {
+    transform: scale(1.06);
+    color: rgb(162, 0, 255);
+}
+.date-type {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    margin-top: -25px;
+    margin-bottom: -10px;
+}
+#type {
+    padding: 2px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    user-select: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+#date_of_note {
+    padding: 15px 10px;
+    background-color: transparent;
+    opacity: 0.5;
+    font-size: 17px;
+    margin-bottom: -10px;
+}
+
+/* for task add container */
+.containe_task_add {
+    position: relative;
+    width: 300px;
+    background-color: white;
+    margin: auto;
+    padding: 0 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.222);
+}
+.cancel-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cancel-text i {
+    opacity: 0.5;
+    cursor: pointer;
+}
+.title-input {
+    width: 95%;
+}
+.label {
+    font-size: 18px;
+    font-weight: 560;
+    letter-spacing: 1px;
+    opacity: .5;
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+#input_title {
+    width: 100%;
+    font-size: 18px;
+    padding: 4px 10px;
+    margin-block: 10px;
+}
+.content {
+    width: 95%;
+}
+#note__content{
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 18px;
+    margin-block: 5px;
+}
+.tags_select {
+    width: 100%;
+}
+.all-tags {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+}
+.all-tags label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100px;
+    padding-block: 5px;
+    border-radius: 20px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+.all-tags label:active {
+    transform: scale(1.06);
+}
+.all-tags label:nth-child(1), .works {
+   background-color: rgba(0, 85, 255, 0.233);
+   color: blue;
+   font-weight: 580;
+}
+.all-tags label:nth-child(2), .personal {
+    background-color: rgba(217, 0, 255, 0.233);
+    color: blueviolet;
+    font-weight: 580;
+    /* width: 120px; */
+}
+.all-tags label:nth-child(3), .ideas {
+    background-color: green;
+    font-weight: 580;
+    color: white;
+}
+.all-tags label:nth-child(4), .reminder {
+    background-color: rgba(255, 217, 0, 0.388);
+    font-weight: 580;
+   color: goldenrod;
+   /* width: 140px; */
+}
+input[type="radio"] {
+    display: none;
+}
+#lab1:checked ~ .all-tags label[for="lab1"],
+#lab2:checked ~ .all-tags label[for="lab2"], 
+#lab3:checked ~ .all-tags label[for="lab3"],
+#lab4:checked ~ .all-tags label[for="lab4"] {
+    background-color: black;
+    color: white;
+    transition: all 0.5s ease;
+}
+#save_btn {
+    width: 100%;
+    text-align: center;
+    margin-block: 10px 20px;
+    font-size: 17px;
+    color: white;
+    background-color: rgb(115, 0, 255);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding-block: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.222);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all .3s ease-in-out;
+}
+#save_btn:hover  {
+    background-color: blueviolet;
+    color: black;
+    font-size: 18px;
+}
+#save_btn:active {
+    transform: scale(1.06);
+}
+
+/* for container display */
+.shade {
+    opacity: 0.4;
+    pointer-events: none;
+    user-select: none;
+}
+.containe_task_add {
+    display: none;
+}
+.container {
+    display: block;
+}
+
+@media (min-width: 550px) {
+    .container {
+        max-width: 500px;
+    }
+    .serch_btnsre {
+        width: 65%;
+    }
+    #display_options {
+        width: 100px;
+    }
+    #add_note_btn {
+        width: 70px;
+        gap: 5px;
+    }
+    .bold {
+        font-size: 16px;
+    }
+    .all-tags label {
+        font-size: 10px;
+    }
+}
+@media (min-width: 950px) {
+    .container {
+        max-width: 650px;
+    }
+    .serch_btnsre {
+        width: 80%;
+    }
+    .containe_task_add {
+        width: 400px;
+    }
+    #display_options {
+        width: 110px;
+    }
+    #add_note_btn {
+        width: 80px;
+        gap: 8px;
+    }
+    .bold {
+        font-size: 18px;
+    }
+    .all-tags label {
+        font-size: 13px;
+    }
+}

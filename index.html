@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTE APP</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- for icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>elegant notes</h1>
+        <p>store your thoughts and ideas in style</p>
+        <div class="ser_opt_add">
+            <div class="serch_btnsre">
+                <input type="text"  id="search-input" placeholder="Search notes....">
+                <button id="search_btn">🔍</button>
+            </div>
+            <select  id="display_options">
+                <option value="all-notes">All notes</option>
+                <option value="works">works</option>
+                <option value="personal">personal</option>
+                <option value="ideas">ideas</option>
+                <option value="reminder">reminder</option>
+            </select>
+            <button id="add_note_btn"><span class="bold">+ </span>Add</button>
+        </div>
+
+        <!-- for created notes -->
+        <ul id="notes__task">
+            <!-- <li>
+                <div class="title__dltbtn">
+                    <h3 class="title">New</h3>
+                    <button id="dlt_btn">🗑️</button>
+                </div>
+                <p id="note_text">text of mine </p>
+                <a href="#" id="show_more_less">Showmore</a>
+                <div class="date-type">
+                    <h3 id="type">🔔 Reminders</h3>
+                    <p id="date_of_note">29-04-2025 12:09</p>
+                </div>
+            </li>     -->
+        </ul>
+
+    </div>
+
+    <!-- to add notes container -->
+     <div class="containe_task_add">
+        <div class="cancel-text">
+            <h2>New Note</h2>
+            <i class="fa-solid fa-x" id="cancel"></i>
+        </div>
+        <hr>
+        <div class="title-input">
+            <h4 class="label">Title</h4>
+            <input type="text"  id="input_title">
+        </div>
+        <div class="content">
+            <h4 class="label">Content</h4>
+            <textarea id="note__content"></textarea>
+        </div>
+        <div class="tags_select">
+            <h4 class="label">Tags</h4>
+            <input type="radio" name="radio" id="lab1">
+            <input type="radio" name="radio" id="lab2">
+            <input type="radio" name="radio" id="lab3" checked>
+            <input type="radio" name="radio" id="lab4">
+            <div class="all-tags">
+                <label for="lab1">
+                    <span class="space"><i class="fa-solid fa-briefcase"></i></span>
+                    Work
+                </label>
+                <label for="lab2">
+                    <span class="space"><i class="fa-solid fa-user"></i></span>
+                    Personal
+                </label>
+                <label for="lab3">
+                    <span class="space"><i class="fa-solid fa-lightbulb"></i></span>
+                    Ideas
+                </label>
+                <label for="lab4">
+                    <span class="space"><i class="fa-solid fa-bell"></i></span>
+                    Reminder
+                </label>
+            </div>
+            <button id="save_btn">Save Note</button>
+        </div>
+     </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
