@@ -111,14 +111,125 @@ option {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
 }
-#notes__task li {
+#notes__task .old {
     list-style: none;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.222);
     border-radius: 5px;
     padding: 5px 10px;
+    cursor: pointer;
     position: relative;
 }
+/* delete request */
+.delte_request {
+    display: none;
+    padding: 5px 10px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.256);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    text-align: center;
+    border-radius: 5px;
+}
+.displaythis {
+    display: block;
+}
+#dont, #doit {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-weight: 600;
+  margin-right: 30px;
+  margin-block: 15px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: opacity 0.1s ease;
+}
+#dont:active, #doit:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+}
+#doit {
+    color: orangered;
+}
+/* close delete request */
+
+/* when setting clicked it should be darker rigth*/
+.background {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.151);
+    clip-path: ellipse(10px 10px at 90% 33px);
+    transition: display 0.6s ease;
+}
+.backgroundClick {
+   display: block;
+   clip-path: ellipse(100% 100%);
+   animation: display 0.3s ease-in-out alternate;
+}
+/* setting buttons */
+.dltOption {
+    display: none;
+    position: absolute;
+    right: 40px;
+    top: 30px;
+    z-index: 100;
+    background-color: white;
+    text-transform: capitalize;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.256);
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 45px;
+    font-size: 12px;
+    font-weight: 650;
+    transition: all 1s ease;
+}
+.ulop {
+    display: block;
+    animation: displayul 0.3s ease-in-out alternate;
+}
+
+@keyframes display {
+    from{
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+    to{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+@keyframes displayul {
+    from{
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.dlelete {
+    color: orangered;
+}
+.dltOption li {
+   list-style: none;
+   margin: auto;
+   position: relative;
+   margin: 10px;
+}
+.dltOption li:active {
+    transform: scale(1.06);
+}
+/* setting buttons close */
 .title__dltbtn {
     display: flex;
     justify-content: space-between;
@@ -128,11 +239,16 @@ option {
     text-transform: capitalize;
 }
 #dlt_btn {
+    position: relative;
+    z-index: 100;
     background-color: transparent;
     border: none;
     outline: none;
     font-size: 20px;
     cursor: pointer;
+}
+#dlt_btn i {
+    transform: rotate(90deg);
 }
 #note_text{
     text-align: left;
@@ -141,6 +257,7 @@ option {
     position: relative;
     width: 100%;
     transition: all 0.4s ease;
+    margin-bottom: 45px;
 }
 .note_text {
     max-height: 10px;
@@ -187,7 +304,7 @@ option {
     padding: 15px 10px;
     background-color: transparent;
     opacity: 0.5;
-    font-size: 17px;
+    font-size: 13px;
     margin-bottom: -10px;
 }
 
@@ -357,6 +474,9 @@ input[type="radio"] {
     .all-tags label {
         font-size: 10px;
     }
+    #date_of_note {
+        font-size: 15px;
+    }
 }
 @media (min-width: 950px) {
     .container {
@@ -380,5 +500,8 @@ input[type="radio"] {
     }
     .all-tags label {
         font-size: 13px;
+    }
+    #date_of_note {
+        font-size: 14px;
     }
 }

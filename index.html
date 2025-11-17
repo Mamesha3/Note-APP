@@ -29,10 +29,15 @@
 
         <!-- for created notes -->
         <ul id="notes__task">
-            <!-- <li>
+            <!-- <li class="old">
+                <div class="background"></div>
                 <div class="title__dltbtn">
+                    <ul class="new">
+                        <li>edit</li>
+                        <li>delter</li>
+                    </ul>
                     <h3 class="title">New</h3>
-                    <button id="dlt_btn">🗑️</button>
+                    <button id="dlt_btn"><i class="fa-solid fa-ellipsis"></i></button>
                 </div>
                 <p id="note_text">text of mine </p>
                 <a href="#" id="show_more_less">Showmore</a>
@@ -44,6 +49,14 @@
         </ul>
 
     </div>
+
+    <!-- delete request -->
+       <div class="delte_request">
+          <p>Are you sure you want to Delete this note?</p>
+          <button id="dont">No</button>
+          <button id="doit">Yes</button>
+       </div>
+    <!-- close delete request -->
 
     <!-- to add notes container -->
      <div class="containe_task_add">
