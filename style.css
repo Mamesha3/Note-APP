@@ -129,13 +129,19 @@ option {
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 1000;
     transform: translate(-50%, -50%);
     width: 300px;
     text-align: center;
     border-radius: 5px;
 }
+.delte_request p {
+    position: relative;
+    top: 20px;
+}
 .displaythis {
     display: block;
+    position: absolute;
 }
 #dont, #doit {
   border: none;

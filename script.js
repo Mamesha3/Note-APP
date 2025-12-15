@@ -39,29 +39,36 @@ function editDelBtn(edit, dlt, h3s, ps, li) {
       
     })
     dlt.addEventListener('click', () => {
-       document.querySelector('.delte_request').classList.toggle('displaythis')
-       container.classList.toggle('shade')
+       document.querySelector('.delte_request').classList.add('displaythis')
     })
-
-    document.querySelector('#dont').addEventListener('click', () => {
-        document.querySelector('.delte_request').classList.remove('displaythis')
-        container.classList.remove('shade')
-    })
-
     
 }
+
+// create delete request buttons and append them in creatBox function
+// function createDltRequest(all) {
+    
+    
+      
+//     return all.append(per, noBtn, yesBtn)
+// }
+// closed creatting delete request buttons and append them in creatBox function
 
 function allDltB(button, ul, dlBack) {
     button.addEventListener('click', () => {      
         ul.classList.toggle('ulop')
-        dlBack.classList.toggle('backgroundClick')  
+        dlBack.classList.toggle('backgroundClick') 
+    })
+    dlBack.addEventListener('blur', () => {
+        ul.classList.remove('ulop')
+        dlBack.classList.remove('backgroundClick') 
     })
 }
 
 function creatNoteBox(titleInput, textarea, addTime, checked) {
     // creat elements
     const li = document.createElement('li')
-    li.classList = 'old'
+    li.classList = 'old' 
+
     const divTitle = document.createElement('div')
     const h3 = document.createElement('h3')
     const button = document.createElement('button')
@@ -74,6 +81,30 @@ function creatNoteBox(titleInput, textarea, addTime, checked) {
     dlBack.className = 'background'
     const ul = document.createElement('ul')
     ul.className = 'dltOption'
+    const containerDR = document.createElement('div')
+    containerDR.className = 'delte_request'
+    const par = document.createElement('p')
+    par.textContent = 'Are you sure you want to Delete this note?'
+
+    const yesBtn = document.createElement('button')
+    yesBtn.id = 'doit'
+    yesBtn.textContent = 'Yes'
+    yesBtn.addEventListener('click', () => {
+       document.querySelector('.delte_request').classList.remove('displaythis')
+       li.remove()
+       saveData()
+    })
+
+    const noBtn = document.createElement('button')
+    noBtn.textContent = 'No'
+    noBtn.id = 'dont'
+    noBtn.addEventListener('click', () => {
+       document.querySelector('.delte_request').classList.remove('displaythis')
+    })
+    
+
+    containerDR.append(par, noBtn, yesBtn)
+
 
     // give them class then append them
     divTitle.className = 'title__dltbtn'
@@ -113,7 +144,7 @@ function creatNoteBox(titleInput, textarea, addTime, checked) {
     })
 
     // append all
-    li.append(dlBack, divTitle, p, a, divDate)
+    li.append(containerDR, dlBack, divTitle, p, a, divDate)
     taskcontainer.appendChild(li)
 }
 
@@ -225,11 +256,11 @@ cancel.addEventListener('click', () => {
 // local storage feature
 function saveData() {
     let task = []
-    taskcontainer.querySelectorAll('li').forEach(li => {
-       let title = li.querySelector('.title').textContent
-       let text = li.querySelector('#note_text').textContent
-       let date = li.querySelector('#date_of_note').textContent
-       let check = li.querySelector('#type').innerHTML
+    taskcontainer.querySelectorAll('li').forEach(l => {
+       let title = l.querySelector('.title').textContent
+       let text = l.querySelector('#note_text').textContent
+       let date = l.querySelector('#date_of_note').textContent
+       let check = l.querySelector('#type').innerHTML
 
        task.push({ title, text, date, check })
     })
