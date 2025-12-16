@@ -44,15 +44,6 @@ function editDelBtn(edit, dlt, h3s, ps, li) {
     
 }
 
-// create delete request buttons and append them in creatBox function
-// function createDltRequest(all) {
-    
-    
-      
-//     return all.append(per, noBtn, yesBtn)
-// }
-// closed creatting delete request buttons and append them in creatBox function
-
 function allDltB(button, ul, dlBack) {
     button.addEventListener('click', () => {      
         ul.classList.toggle('ulop')
